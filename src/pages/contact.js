@@ -2,27 +2,24 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Herosection from '../components/Reusable/Herosection'
 import Infoblock from '../components/Reusable/Infoblock'
-import DualInfoblock from '../components/Reusable/DualInfoblock'
-import Service from '../components/Service/Service'
-
+import Contact from '../components/Contact/contact'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-const ServicesPage = ({data}) => (
+const ContactPage = ({data}) => (
   <Layout>    
   <SEO title = "Home" />
 
   <Herosection 
   img = {data.img.childImageSharp.fluid}
-  title = "About LearnCodeOnline"
+  title = "Conatct US"
   subtitle =  ""
   heroclass = "about-background"
   />
   
-  <DualInfoblock heading = "Message From CEO" />
-  <Infoblock heading = "About Vision" />
-  <Service />
-    </Layout>
+  <Infoblock heading = "How Can we Help" />
+    <Contact />
+  </Layout>
 )
 
 export const query = graphql`
@@ -38,4 +35,4 @@ export const query = graphql`
 }
 `
 
-export default ServicesPage
+export default ContactPage
