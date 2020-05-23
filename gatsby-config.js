@@ -7,9 +7,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `LearnCodeOnline YouTube project`,
+    title: `VishakAmin Project`,
     description: `Let's Do it `,
-    author: `@gatsbyjs`,
+    author: `@VishakAmin`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

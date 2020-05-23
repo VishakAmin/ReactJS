@@ -14,7 +14,7 @@ const ServicesPage = ({data}) => (
 
   <Herosection 
   img = {data.img.childImageSharp.fluid}
-  title = "About LearnCodeOnline"
+  title = "About Vishak Amin"
   subtitle =  ""
   heroclass = "about-background"
   />
