@@ -3,59 +3,39 @@ import { graphql } from 'gatsby'
 import Herosection from '../components/Reusable/Herosection'
 import Infoblock from '../components/Reusable/Infoblock'
 import DualInfoblock from '../components/Reusable/DualInfoblock'
+import Service from '../components/Service/Service'
 
-import Coursecart from "../components/Cart/Coursecart"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-const IndexPage = ({data}) => (
+const ServicesPage = ({data}) => (
   <Layout>    
-  <SEO title = "Home" /> 
-
+  <SEO title = "Home" />
 
   <Herosection 
   img = {data.img.childImageSharp.fluid}
-  title = "I write Code"
-  subtitle =  "LearnCodeOnline.in"
-  heroclass = "hero-background"
+  title = "About LearnCodeOnline"
+  subtitle =  ""
+  heroclass = "about-background"
   />
-  <Infoblock heading = "About Us" />
-  <Coursecart  courses = {data.courses}  />
-  <DualInfoblock heading = "Our Team" />
+  
+  <DualInfoblock heading = "Message From CEO" />
+  <Infoblock heading = "About Vision" />
+  <Service />
     </Layout>
 )
 
 export const query = graphql`
 { 
-  img: file(relativePath: { eq: "heromain.png" }) {
+  img: file(relativePath: { eq:"contact.png" }) {
      childImageSharp {
        fluid{
         ...GatsbyImageSharpFluid_tracedSVG
 
-      
-      }
+       }
      }
    }
-
-   courses: allContentfulCourses{
-    edges{
-      node {
-        id
-        title
-        price
-        category
-        description{
-          description
-        }
-        image{
-          fixed(width:200, height:120){
-            ...GatsbyContentfulFixed_tracedSVG  
-          }
-        }
-      }
-    }
-    }
 }
 `
 
-export default IndexPage
+export default ServicesPage
